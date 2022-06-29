@@ -1,0 +1,115 @@
+// Place all the styles related to the todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 2%;
+}
+
+body {
+    height: 100vh;
+    background: #A9CCE3;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.AddTask {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.AddTask .input-text {
+    width: 70%;
+    border: none;
+    border-bottom: 2px solid black;
+    background: none;
+    padding: 10px;
+    margin-left: 20px;
+    outline: none;
+    font-size: 1.5em;
+}
+
+.AddTask .addBtn {
+    background: black;
+    color: blanchedalmond;
+    text-transform: uppercase;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.notcompleted,
+.completed {
+    margin: 5px 0;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 28px;
+    text-transform: uppercase;
+    text-transform: center;
+    color: black;
+}
+
+ol {
+    list-style: none;
+    counter-reset: my-counter;
+}
+
+ol li {
+    width: 100%;
+    padding: 18px;
+    margin: 5px 0;
+    background: #E74C3C;
+    font-size: 22px;
+    counter-reset: my-counter;
+}
+
+ol.completed li {
+    background: #2ECC71;
+}
+
+ol li::before {
+    content: counter(my-counter);
+    background: #231381;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+li button {
+    float: right;
+    padding: 5px;
+    font-size: 28px;
+    line-height: 28px;
+    margin-right: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.Flash-error {
+    position: absolute;
+    color: #FF0033;
+    font-size: 15px;
+    left: 47%;
+    top: 5px
+}

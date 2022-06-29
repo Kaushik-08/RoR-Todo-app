@@ -1,0 +1,40 @@
+ <html>
+    <head>
+        <title> To do app </title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+            
+<body>
+        <h1> To do list </h1>
+    <div class="container">
+    <div class="AddTask"> 
+        <%= form_with(todos: @todo,  url: "/todos", method: "POST") do |form| %>
+        <%= form.text_field :todo_task, id:"myInput",placeholder: "Add a Task...",class: "input-text" %>
+        <%= form.submit "Add Task", class:"addBtn" %>
+        <% end %>
+    </div>
+        <h3> Not Completed </h3>
+        <ol class="notcompleted">
+        <% @todo.each do |todo| %>
+    <%if todo.completed == false%>
+    <li>
+        <%= todo.todo_task %>     
+        <a href="/update/<%= todo.id %>"><button><i class="fa fa-check"></i></button></a>
+        <a href="/delete/<%= todo.id %>"><button><i class="fa fa-trash"></i></button></a> 
+    </li>   
+<% end %>  
+<% end %>   
+    </ol>
+        <h3>Completed</h3>
+        <ol class="completed">
+        <% @todo.each do |todo| %>
+    <%if todo.completed == true%>
+    <li>
+        <%= todo.todo_task %>     
+        <a href="/delete/<%= todo.id %>"><button><i class="fa fa-trash"></i></button></a> 
+    </li>   
+<% end %>  
+<% end %>
+    </ol>             
+</body>
+</html>
